@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Face Recognition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1c1c1c, #2f2f2f);
+      color: #f0f0f0;
+    }
+
+    header {
+      background: linear-gradient(to right, #8e2de2, #4a00e0);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #fff;
+      text-shadow: 1px 1px 2px #000;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffe600;
+    }
+
+    .section {
+      padding: 70px 60px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      background: #141414;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      padding: 60px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .hero-text h2 {
+      font-size: 42px;
+      color: #ffe600;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero-text p {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+
+    .hero-text a {
+      background: #ff0057;
+      color: #fff;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .hero-text a:hover {
+      background: #00b894; /* Teal Hover Color */
+    }
+
+    .hero-images {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .hero-images img {
+      width: 220px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0, 200, 255, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .hero-images img:hover {
+      transform: scale(1.05);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #ff0057;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: white;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    .features, .about, .contact, .howitworks {
+      background: #1e1e1e;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      margin-top: 50px;
+    }
+
+    .section h3 {
+      font-size: 30px;
+      color: #ffe600;
+      margin-bottom: 30px;
+    }
+
+    .feature-box {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 250px;
+      background: #292929;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .feature h4 {
+      color: #00c3ff; /* Light Blue Title */
+      margin-bottom: 10px;
+    }
+
+    .feature p {
+      color: #ccc;
+    }
+
+    .howitworks p {
+      font-size: 16px;
+      color: #bbb;
+      line-height: 1.6;
+      background: #111;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .about p, .contact p {
+      font-size: 16px;
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    .contact-info span {
+      display: inline-block;
+      margin-right: 25px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #000;
+      color: #999;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .hero-text {
+        padding: 0;
+        margin-bottom: 30px;
+      }
+
+      .hero-images {
+        justify-content: center;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Smart Face Recognition</h1>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#features">Features</a>
+      <a href="#howitworks">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="section hero">
+    <div class="hero-text">
+      <div class="badge">AI POWERED SYSTEM</div>
+      <h2>Real-Time Face Attendance</h2>
+      <p>Scan. Recognize. Mark. No manual errors. Built for speed and accuracy using Dlib, OpenCV, and Python.</p>
+      <a href="/start">Start Recognition</a>
+    </div>
+    <div class="hero-images">
+      <img src="{{ url_for('static', filename='aditya2.jpeg') }}" alt="User1">
+      <img src="{{ url_for('static', filename='adi2.jpeg') }}" alt="User2">
+    </div>
+  </section>
+
+  <section id="features" class="section features">
+    <h3>🚀 Top Features</h3>
+    <div class="feature-box">
+      <div class="feature">
+        <h4>🔍 Instant Face Detection</h4>
+        <p>Live feed analysis using HOG + CNN with high precision and speed.</p>
+      </div>
+      <div class="feature">
+        <h4>📁 Attendance Log</h4>
+        <p>Automatically logs name & timestamp into a secure <code>Attendance.csv</code>.</p>
+      </div>
+      <div class="feature">
+        <h4>💡 Smart Matching</h4>
+        <p>Each face is encoded & matched with intelligent vector-based logic using face_recognition.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="howitworks" class="section howitworks">
+    <h3>⚙️ How It Works</h3>
+    <p>
+      <strong>Step 1:</strong> Load known faces and encode into 128D vectors.<br/>
+      <strong>Step 2:</strong> Capture real-time video using webcam.<br/>
+      <strong>Step 3:</strong> Detect face, encode, and compare with known data.<br/>
+      <strong>Step 4:</strong> If matched, store name and time in <code>Attendance.csv</code>.<br/>
+      <strong>Step 5:</strong> Prevents duplicate marking in same session.
+    </p>
+  </section>
+
+  <section id="about" class="section about">
+    <h3>👨‍💻 About the Creator</h3>
+    <p>I’m <strong>Aditya</strong>, a BCA student at SD College. This project was made to automate attendance using AI & face recognition. It's fast, efficient and reduces human error.</p>
+  </section>
+
+  <section id="contact" class="section contact">
+    <h3>📞 Contact</h3>
+    <p>Need help or want to collaborate?</p>
+    <div class="contact-info">
+      <span>📱 +91 7082390881</span>
+      <span>📍 Ambala, India</span>
+    </div>
+
+  </section>
+
+  <footer>
+    &copy; 2025 Smart Face Recognition | Designed by Aditya
+  </footer>
+
+</body>
+
+</html>
